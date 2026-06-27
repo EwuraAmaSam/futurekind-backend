@@ -1,0 +1,18 @@
+﻿# Secrets
+.env
+
+# Python environment and caches
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Build artifacts
+dist/
+build/
+*.log
+
+# Research corpus (large PDFs; indexed via ingestion, not source code)
+Futurekind Research/

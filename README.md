@@ -83,7 +83,7 @@ curl http://localhost:8000/api/v1/topics
 ```bash
 curl -X POST http://localhost:8000/api/v1/sessions \
   -H "Content-Type: application/json" \
-  -d '{"scenario_slug": "subsidize-plf"}'
+  -d '{"scenario_slug": "subsidize-plf-welfare"}'
 ```
 
 Returns `session_id` and the Policy Agent introduction.
@@ -110,11 +110,17 @@ curl http://localhost:8000/api/v1/sessions/{session_id}/transcript
 
 ## Scenarios
 
+Twenty PLF policy deliberation topics are defined in [`app/scenarios/topics.py`](app/scenarios/topics.py). Examples:
+
 | Slug | Question |
 |------|----------|
-| `subsidize-plf` | Should governments subsidize precision livestock farming technologies? |
-| `mandatory-ai-welfare` | Should AI welfare monitoring be mandatory? |
-| `ai-vs-human-inspection` | Can AI monitoring replace human inspections? |
+| `subsidize-plf-welfare` | Should governments subsidize PLF technologies that improve animal welfare? |
+| `mandatory-ai-welfare-large-farms` | Should AI-based welfare monitoring be mandatory on large commercial farms? |
+| `ai-replace-human-inspections` | Should continuous AI monitoring replace periodic human welfare inspections? |
+| `plf-data-ownership` | Who should own and control animal welfare data collected through PLF systems? |
+| `ai-evidence-legal-proceedings` | Should AI welfare monitoring evidence be admissible in enforcement and legal proceedings? |
+
+Use `GET /api/v1/topics` for the full list.
 
 ## Architecture
 
